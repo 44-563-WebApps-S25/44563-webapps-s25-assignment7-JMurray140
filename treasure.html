@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html> 
 <title>Treasure Hunt</title>
-<header>Jeremy Digs for Treasure</header>
+<h2>Jeremy Digs for Treasure</h2>
 <head> <style>
     .flex-container {
       display: flex;  flex-direction:row;
       background-color: red;
+	  
   }
 
 .flex-container > div {  /*div children of the flex container*/
@@ -13,23 +14,26 @@
   margin: 10px;  padding: 20px;  font-size: 30px;
 }
 div{
+	font-size:30px;
 	background: burlywood;
 	text-decoration-color: aqua;
-	size:20px;
+	size:30px;
+	justify-content: center;
 	text-align:center;
 }
 div.locations {
 	background: burlywood;
 	text-decoration-color: aqua;
-	text-shadow:2px 2px 5px rgb(113, 97, 97);
+	text-shadow:0px 0px 10px rgb(56, 47, 47);
 	size:20px;
-	text-align:center;
+	align-items: center;
 }
 /* Responsive layout */
 @media (max-width: 600px) { 
 	 .flex-container{
 		 flex-direction:column;
 		 background-color: green;
+		 align-items: center;
 	  }
 	}
 </style>
@@ -42,56 +46,117 @@ div.locations {
 		Click on the locations to find
 silver and gold, watch out for the rattlesnake
 	</div>
-	<div class="locations">
+	<div class="locations" id="locations">
 		Number of locations checked is zero.
 	</div>
-	<div class="score">Score is <b>0</b></div>
-	<div> Click for Help</div>
+	<div class="score">Score is <b id="score">0</b></div>
+	<div id="help" onclick="help()"> Click for Help</div>
 	<div class="help">Help Report</div>
 	<div class="flex-container">
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
+		<div><img src="Cactus.jpg" id="c0" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c1" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c2" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c3" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c4" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c5" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c6" length="100" width="100" onclick="check(this.id)"></div>
 	</div>
 	<div class="flex-container">
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
+		<div><img src="Cactus.jpg" id="c7" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c8" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c9" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c10" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c11" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c12" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c13" length="100" width="100" onclick="check(this.id)"></div>
 	</div>
 	<div class="flex-container">
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
+		<div><img src="Cactus.jpg" id="c14" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c15" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c16" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c17" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c18" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c19" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c20" length="100" width="100" onclick="check(this.id)"></div>
 	</div>
 	<div class="flex-container">
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
+		<div><img src="Cactus.jpg" id="c21" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c22" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c23" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c24" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c25" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c26" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c27" length="100" width="100" onclick="check(this.id)"></div>
 	</div>
 	<div class="flex-container">
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
-		<div><img src="Cactus.jpg" length="100" width="100"></div>
+		<div><img src="Cactus.jpg" id="c28" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c29" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c30" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c31" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c32" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c33" length="100" width="100" onclick="check(this.id)"></div>
+		<div><img src="Cactus.jpg" id="c34" length="100" width="100" onclick="check(this.id)"></div>
 	</div>
 	</body>
+	<script>
+		ids=['c1','c2','c3','c4','c5','c6','c7','c8','c9','c10','c11','c12','c13','c14','c15','c16','c17','c18','c19','c20','c21','c22','c23','c24','c25','c26','c27','c28','c29','c30','c31','c32','c33','c34','c35']
+		score=0
+		locationsVisited=0
+		lastLocation=0
+		silverLocations=[2,5,11,21,32]
+		goldLocation=15
+		snakeLocation=20
+		gameOver=false
+
+		function check(position){
+			index = ids.indexOf(position) + 1
+			if (gameOver==true){
+			}
+			image=document.getElementById(position)
+			if (silverLocations.includes(index)) {
+				image.src="Silver Coin.jpg"
+				score = score + 3
+			}	
+			else if (index === goldLocation) {
+				image.src = "Gold_Nugget.jpg"
+				score = score + 5
+			}
+			else if (index === snakeLocation) {
+				image.src = "snake.jpg"
+				score = score-3
+				gameOver=true
+			}
+			else {
+				image.src = "pottery.jpg"
+				score = score + 1
+			}
+			locationsVisited += 1;
+			lastLocation = index
+			loc = document.getElementById("locations")
+			scor = document.getElementById("score")
+			loc.innerHTML = "Number of locations checked is " + String(locationsVisited) + "."
+			scor.innerHTML = score
+		}
+		function help() {
+			returnmsg = ""
+			helpmsg = document.getElementById("help")
+			checks = [lastLocation + 1, lastLocation - 1, lastLocation + 7, lastLocation - 7]
+			for (i = 0; i < checks.length; i++) {
+				if(silverLocations.includes(checks[i])) {
+					returnmsg = 'Clink'
+					break
+				}
+				else if(checks[i] == snakeLocation) {
+					returnmsg = 'Rattle'
+					break
+				}
+			}
+			if (returnmsg != "") {
+				helpmsg.innerHTML = "<b>'" + returnmsg + "'</b> <br> Click for more help"
+			}
+			else {
+				helpmsg.innerHTML = "<b>'Wind'</b> <br> Click for more help"
+			}
+		}
+	</script>
 	</html>	
