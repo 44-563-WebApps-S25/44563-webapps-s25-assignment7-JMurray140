@@ -16,11 +16,11 @@
   <div id="counter">Count</div>
   <button type="button"
   class="btn btn-primary"
-  onclick="recordTime()">
+  onclick="beginTime()">
   Go</button>
   <button type="button"
   class="btn btn-primary"
-  onclick="buttonPress2()">
+  onclick="recordTime()">
   halt</button>
   
   <p id="target">I will become red </p>
@@ -29,18 +29,24 @@
   var haltTime
   function recordTime() {
     haltTime = Date.now()
-    console.log(haltTime)
+    document.getElementById("target").innerHTML = "Time was: " + String((haltTime - targetTime))
   }
-  function buttonPress1() {
-    setTimeout(function(){
-      document.getElementById('target').style.color = "red"
-    }, 3000)
-  }
+  function beginTime() {
 
-  function buttonPress2() {
-    setTimeout(()=>{
-      document.getElementById('target').style.color = "red"
-    }, 3000)
+      for (let i = 0; i <= 5; i++) {
+        setTimeout(function() {
+          document.getElementById("counter").innerHTML = i;
+        }, (5 - i) * 1000);
+        setTimeout(function() {
+        if (haltTime == null) {
+          document.getElementById("target").innerHTML = "not soon enough"
+        }
+      }, 5000)
+      targetTime = Date.now()
+      }
+
+
+ 
   }
   </script>
 
